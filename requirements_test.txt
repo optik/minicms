@@ -1,0 +1,11 @@
+coverage==4.3.4
+mock>=1.0.1
+flake8>=2.1.0
+tox>=1.7.0
+codecov>=2.0.0
+lxml>=3.8.0
+Django>=1.11.2
+django-model-utils>=2.4
+django-parler>=1.6.2
+django-ordered-model>=1.4.0
+PyYAML==3.12

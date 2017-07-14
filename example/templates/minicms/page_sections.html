@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load minicms %}
+
+{% block css %}
+    {{ block.super }}
+    <style type="text/css">
+        section:nth-child(odd) {
+            background: #f4f4f4;
+        }
+    </style>
+{% endblock css %}
+
+{% block content %}
+    <section>
+        {% content_section 'main' %}
+    </section>
+
+    <section>
+        {% content_section 'second' %}
+    </section>
+
+    <section>
+        {% content_section 'third' %}
+    </section>
+{% endblock content %}

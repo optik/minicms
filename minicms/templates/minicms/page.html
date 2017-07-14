@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load i18n minicms %}
+
+{% block body_class %}page {{ page.code }}{% endblock %}
+
+{% block metatags %}
+    {% cms_metadata page %}
+    {{ block.super }}
+{% endblock metatags %}
+
+{% block page_title %}<h1>{{ page.title }}</h1>{% endblock %}
+
+{% block breadcrumbs %}
+    {% page_trail page %}
+{% endblock %}
+
+{% block content %}
+    {% autoescape off %}
+    {{ page.content }}
+    {% endautoescape %}
+{% endblock %}

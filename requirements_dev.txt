@@ -1,0 +1,7 @@
+bumpversion==0.5.3
+wheel==0.29.0
+lxml>=3.8.0
+Django>=1.11.2
+django-model-utils>=2.4
+django-parler>=1.6.2
+django-ordered-model>=1.4.0

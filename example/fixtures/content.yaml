@@ -1,0 +1,38 @@
+- model: minicms.page
+  fields:
+    is_homepage: True
+    code: homepage
+    order: 1
+    template: minicms/page_jumbotron.html
+
+- model: minicms.pagetranslation
+  fields:
+    master: ["homepage"]
+    language_code: en
+    title: Home page
+    slug: ""
+    content: This is the content of the homepage
+
+
+- model: minicms.page
+  fields:
+    code: contact
+    order: 2
+    template: minicms/page_sections.html
+
+- model: minicms.pagetranslation
+  fields:
+    master: ["contact"]
+    language_code: en
+    title: Contact
+    slug: "contact"
+    content: This is a page with some contact information
+
+- model: minicms.pagetranslation
+  fields:
+    master: ["contact"]
+    language_code: pl
+    title: Kontakt
+    slug: "kontakt"
+    content: To jest strona z informacjami kontaktowymi
+

@@ -1,0 +1,19 @@
+section {
+    padding: 15px 0;
+    margin: 30px 0;
+    border-top: 1px dashed #ccc;
+    border-bottom: 1px dashed #ccc;
+    position: relative;
+}
+
+section:before {
+    display: block;
+    position: absolute;
+    content: "Section '" attr(data-section-id) "'";
+    padding: 0 10px;
+    left: 0;
+    top: -20px;
+    line-height: 20px;
+    background: #ccc;
+    color: #fff;
+}

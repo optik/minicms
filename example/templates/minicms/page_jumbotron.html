@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load minicms %}
+
+{% block content %}
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container">
+            {% content_section "main" %}
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-4">
+                {% content_section 'col-1' %}
+            </div>
+            <div class="col-md-4">
+                {% content_section 'col-2' %}
+            </div>
+            <div class="col-md-4">
+                {% content_section 'col-3' %}
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
