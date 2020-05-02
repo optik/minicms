@@ -36,8 +36,10 @@ htmlcov
 .project
 .pydevproject
 
-# Pycharm/Intellij
+# IDEs
 .idea
+.vscode
+*.code-workspace
 
 # Complexity
 output/*.html
@@ -48,3 +50,6 @@ docs/_build
 
 # Databases
 *.sqlite3
+
+# Logs
+*.log
