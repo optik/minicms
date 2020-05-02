@@ -1,4 +1,4 @@
-{% load staticfiles i18n minicms %}<!DOCTYPE html>
+{% load static i18n minicms %}<!DOCTYPE html>
 <html lang="en" >
 <head>
   <meta charset="utf-8">
@@ -7,86 +7,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-
-  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-  <!--[if lt IE 9]>
-  <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-
-
   {% block css %}
   <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="//v4-alpha.getbootstrap.com/dist/css/bootstrap.min.css">
-
-  <!-- Your stuff: Third-party css libraries go here -->
-
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
   {% endblock %}
 </head>
 
 <body>
-    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse mb-3">
-        <div class="container">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" href="{% url 'minicms:homepage' %}">MiniCMS Example</a>
-
-            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                {% nav_index  %}
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown01">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                </ul>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="{% url 'minicms:homepage' %}">
+                MiniCMS Example
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="{% url 'minicms:homepage' %}">Home</a>
+                <a class="navbar-item" href="{% page_url 'contact' %}" id="contact_link">Contact</a>
+                
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        More
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item">About</a>
+                        <a class="navbar-item">Jobs</a>
+                        <a class="navbar-item">Contact</a>
+                        <hr class="navbar-divider">
+                        <a class="navbar-item">Report an issue</a>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
 
-    {% if messages %}
-    <div class="container">
-        {% for message in messages %}
-        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}</div>
-        {% endfor %}
-    </div>
-    {% endif %}
-
-
     {% block content %}
     {% endblock content %}
 
-{% block modal %}{% endblock modal %}
-
-<!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    {% block javascript %}
-
-    <!-- Latest JQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-
-    <!-- Tether - a requirement for Bootstrap tooltips -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="//v4-alpha.getbootstrap.com/dist/js/bootstrap.js"></script>
-
-    <!-- Your stuff: Third-party javascript libraries go here -->
-
-    {% endblock javascript %}
+    {% block modal %}{% endblock modal %}
 </body>
 </html>
 

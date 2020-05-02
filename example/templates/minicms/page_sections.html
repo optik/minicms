@@ -11,15 +11,13 @@
 {% endblock css %}
 
 {% block content %}
-    <section>
+    <section id="main_container">
         {% content_section 'main' %}
     </section>
-
-    <section>
+    <section id="second_section_container">
         {% content_section 'second' %}
     </section>
-
-    <section>
+    <section id="third_section_container">
         {% content_section 'third' %}
     </section>
 {% endblock content %}
