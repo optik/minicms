@@ -23,4 +23,11 @@ INSTALLED_APPS = [
     "minicms",
 ]
 
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'APP_DIRS': True,
+    }
+]
+
 SITE_ID = 1
